@@ -4,7 +4,7 @@ require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 
 $page = 1;
-$url =  "http://www.ebay.com/sch/i.html?_trksid=p5197.m570.l1313&_nkw=korean+war&_sacat=0" ;
+$url =  "http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1313.TR0.TRC0.H0.XAmerican+Revolutionary+War&_nkw=American+Revolutionary+War&_sacat=0" ;
 
 while (true)
 {
@@ -12,7 +12,7 @@ while (true)
     $dom = new simple_html_dom();
     $dom->load($html); 
 
-    $results = $dom->find("a[@itemprop='name']");
+    $results = $dom->find("a[@class='lvtitle']");
     print " found " . count($results) . " results on page " . $page . "\n"; 
 
     foreach($results as $data)
